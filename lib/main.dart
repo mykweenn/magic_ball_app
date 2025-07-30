@@ -34,9 +34,6 @@ class MagicBallScreenState extends State<MagicBallScreen>
     'Бесспорно',
     'Предрешено',
     'Никаких сомнений',
-    'Бесспорно',
-    'Предрешено',
-    'Никаких сомнений',
     'Определённо да',
     'Можешь быть уверен в этом',
     'Мне кажется — да',
@@ -65,8 +62,7 @@ class MagicBallScreenState extends State<MagicBallScreen>
     shakeController = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
-    )
-    ..addStatusListener((status) {
+    )..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           shakeController.reset();
         }
@@ -119,12 +115,16 @@ class MagicBallScreenState extends State<MagicBallScreen>
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: const RadialGradient(
-                          colors: [Color.fromARGB(255, 2, 255, 221), Color.fromARGB(255, 177, 2, 240)],
+                          colors: [
+                            Color.fromARGB(255, 2, 255, 221),
+                            Color.fromARGB(255, 177, 2, 240)
+                          ],
                           radius: 0.8,
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color.fromARGB(255, 255, 191, 0).withOpacity(0.5),
+                            color: const Color.fromARGB(255, 255, 191, 0)
+                                .withOpacity(0.5),
                             blurRadius: 15,
                             spreadRadius: 5,
                           ),
